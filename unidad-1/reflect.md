@@ -19,9 +19,20 @@ El rol de program counter PC es que despues que se hace el fetch el pc guarda la
 R: Un @ es como una señalizacion vinculada con una etiqueta que pone puntos claves o para señalizar accion como @READKEYBOARD
 
 Explica la función de los siguientes componentes del computador Hack: el registro D, el registro A y la ALU.
+
+R: el registro A se le asigna un numero con @, el registro D se asigna mediante D=, como por ejemplo D=A o D= D-A, etc, y el alu es com M=D
+
 ¿Cómo se implementa un salto condicional en Hack? Describe un ejemplo (p. ej., saltar si el valor de D es mayor que cero).
+
+R: con @D y D;JGT y 0;JMP
+
+
 ¿Cómo se implementa un loop en el computador Hack? Describe un ejemplo (p. ej., un loop que decremente un valor hasta que llegue a cero).
+
+R: exactamente eso no lo se, pero se que se utiliza (LOOP) y @LOOp y 0;JMP para crear y volver al LOOP con ciertas condiciones 
+
 ¿Cuál es la diferencia entre la instrucción D=M y la instrucción M=D?
+R: que D obtiene el valor de M y M obtiene el valor de D, osea que uno lee en la memoria y lo guarda en D y el otro leee el valor de D y lo guarda en la memoria que es M
 Describe brevemente qué se necesita para leer un valor del teclado (KBD) y para “pintar” un pixel en la pantalla (SCREEN).
 
 
