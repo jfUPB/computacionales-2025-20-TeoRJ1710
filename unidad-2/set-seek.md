@@ -95,4 +95,47 @@ M=-1
 @LEER
 0;JMP
 
+TRADUCCION
+
+Screen= -1;
+Contador= 0;
+
+
+
+
+### ACTIVIDAD 04
+
+1:
+```
+//Adds 1+...+100.
+int sum=0;
+for(int i = 1; i <=100; i++){
+   sum+= i;
+}
+```
+TRADUCCION:
+
+
+### ACTIVIDAD 05
+
+```
+int a = 10;
+int* p;
+p = &a;
+*p = 20;
+```
+R:
+
+
+```
+int a = 10;
+int b = 5;
+int *p;
+p = &a;
+b = *p;
+```
+R:
+
+
+
 
