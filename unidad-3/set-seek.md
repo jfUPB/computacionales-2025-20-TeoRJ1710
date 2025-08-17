@@ -94,12 +94,13 @@ en la tercera llamada se incrementa el contador a 2
 
 
 
-Comparacion entre prediccion y resultado
+COMPARACION ENTRE PREDICCION Y RESULTADO
 
 R: A diferencia de uno casi todo fue lo mismo que lo que predije, me equivoque en el primer valor osea el de a que no cambia, y se esperaba que a diferencia de esto, que todo fuera igual porque por lo que veo el programa no depende de nada externo asi que no tendria que cambiar segun yo.
 
-DIferencia entre una variable local normal y una estatica
+DIFERENCIA ENTRE UNA VARIABLE NORMLA Y UNA ESTATICA
 
 R: una variable local normal vive en la memoria que al momento de ejecutar la funcion se crea pero al momento de salir de ella se destruye automaticamente, a diferencia de una variable local estatica que contador estatico esta dentro de ejecutarcontador que es una static por lo cual al momento de llamarla esta recuerda su valor ya que al ser estatica no se borra por eso es que el contador puede incrementar de 0 a 1 a 2 a 3 y asi si la seguimos llamando mas veces.
+
 
 
