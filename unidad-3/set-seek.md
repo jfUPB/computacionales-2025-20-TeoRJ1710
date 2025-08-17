@@ -38,22 +38,26 @@ Capturas de pantalla sobre el antes y despues del codigo
 R:
 
 
+<img width="1906" height="959" alt="image" src="https://github.com/user-attachments/assets/9666e12d-9242-48d3-94ee-eb4db2b35b3f" />
 
-<img width="1447" height="514" alt="image" src="https://github.com/user-attachments/assets/a80d74f6-59a8-47a4-9146-c3e2869c700a" />
+<img width="1917" height="990" alt="image" src="https://github.com/user-attachments/assets/663361b8-96f6-44c8-b3d8-202b3881277b" />
 
-<img width="1918" height="1012" alt="image" src="https://github.com/user-attachments/assets/9d34b189-c52e-4f58-893b-692c9516e6b4" />
+<img width="1915" height="985" alt="image" src="https://github.com/user-attachments/assets/04e71896-0502-4dcb-8470-c82226a21eeb" />
 
-<img width="1912" height="959" alt="image" src="https://github.com/user-attachments/assets/675e5b94-fc90-4cd7-81c8-746f23cf335e" />
+<img width="1912" height="979" alt="image" src="https://github.com/user-attachments/assets/a9727174-cad6-4b00-b152-0fd51eebac38" />
 
-<img width="1913" height="960" alt="image" src="https://github.com/user-attachments/assets/f2439996-c6d8-4d59-88cd-6c41a5e1e8fb" />
+<img width="1916" height="987" alt="image" src="https://github.com/user-attachments/assets/0bf3dade-d08d-4de0-9e68-285b79b2b246" />
 
-<img width="1919" height="970" alt="image" src="https://github.com/user-attachments/assets/e2629586-2380-4081-a6d1-59f70870b9e0" />
+<img width="1842" height="932" alt="image" src="https://github.com/user-attachments/assets/e2cc301c-1235-4705-af22-8c39e5893436" />
 
-<img width="1912" height="970" alt="image" src="https://github.com/user-attachments/assets/4ba792a8-6211-41d5-9d2e-70080808f2f7" />
+<img width="1895" height="958" alt="image" src="https://github.com/user-attachments/assets/061259d4-d959-4221-85fe-8fd8e5ab694a" />
 
-<img width="1919" height="964" alt="image" src="https://github.com/user-attachments/assets/0c6c1213-91ed-405a-9ce6-6eb5b1206dfb" />
 
-<img width="1906" height="980" alt="image" src="https://github.com/user-attachments/assets/ccf0210b-4544-424a-97f6-0acb0e9c62df" />
+
+
+
+
+
 
 
 
@@ -68,3 +72,4 @@ Los puntos claves que pude identificar en la actividad fueron
 Comparacion entre prediccion y resultado
 
 R: A diferencia de uno casi todo fue lo mismo que lo que predije, me equivoque en el primer valor osea el de a que no cambia, y se esperaba que a diferencia de esto, que todo fuera igual porque por lo que veo el programa no depende de nada externo asi que no tendria que cambiar segun yo.
+
