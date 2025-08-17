@@ -52,6 +52,9 @@ R:
 
 <img width="1895" height="958" alt="image" src="https://github.com/user-attachments/assets/061259d4-d959-4221-85fe-8fd8e5ab694a" />
 
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/403604cb-7fe6-437a-b831-ae893a1d488a" />
+
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/393cab1c-cd33-4118-8844-877bfa36c27d" />
 
 
 
@@ -63,13 +66,40 @@ R:
 
 
 
+Los puntos claves que pude identificar y en donde estuvieron los breakpoints en la actividad fueron
 
-Los puntos claves que pude identificar en la actividad fueron
 
+1: int main donde se van declarando las variables
+
+
+2: sumaPorValor donde se ejecuta a= a + 10 despues de copiar el valor de val_A que se hace con a= 20 en donde a termina siendo 30 y el Val_A sigue en 20
+
+
+3: sumaPorReferencia en donde ahora a no es una copia de val_B si no que es una referencia y aqui fue donde me equivoque en mi prediccion en el Val_A porque pensaba que se modificaba, y ahora en b si el Val_B termina siendo 30
+
+
+4: sumaPorPuntero ahora a contiene la direccio de Val_C como un puntero osea *a = 20 y despues como lo demas el Val_C termina siendo 30
+
+
+5: ejecutarContador en donde se hace uso de contador estatico en las tres llamadas de ejecutarContador
+
+
+en la primera llamada el contador estatico esta en 0, osea que se inicia
+
+
+en la segunda llamada se incrementa el comtador estatico a 1
+
+
+en la tercera llamada se incrementa el contador a 2
 
 
 
 Comparacion entre prediccion y resultado
 
 R: A diferencia de uno casi todo fue lo mismo que lo que predije, me equivoque en el primer valor osea el de a que no cambia, y se esperaba que a diferencia de esto, que todo fuera igual porque por lo que veo el programa no depende de nada externo asi que no tendria que cambiar segun yo.
+
+DIferencia entre una variable local normal y una estatica
+
+R: una variable local normal vive en la memoria que al momento de ejecutar la funcion se crea pero al momento de salir de ella se destruye automaticamente, a diferencia de una variable local estatica que contador estatico esta dentro de ejecutarcontador que es una static por lo cual al momento de llamarla esta recuerda su valor ya que al ser estatica no se borra por eso es que el contador puede incrementar de 0 a 1 a 2 a 3 y asi si la seguimos llamando mas veces.
+
 
