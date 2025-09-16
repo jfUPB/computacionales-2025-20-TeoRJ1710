@@ -88,6 +88,38 @@ public class Programa
 }
 ````
 
+ENCAPSULAMIENTO:
+
+````
+public string Nombre
+    {
+        get { return nombre; }
+        protected set { nombre = value; }
+    }
+````
+
+R:  es un claro ejemplo de encapsulamiento porque proteje el acceso a NOMBRE, tambien permite leer desde afuera con el get pero n modificarlo
+
+
+HERENCIA:
+
+````
+public class Circulo : Figura
+````
+Aqui se ve como la clse circulo hereda los atributos y las funciones de la clase figura
+
+
+POLIMORFISMO:
+
+````
+ foreach (Figura fig in misFiguras)
+        {
+            fig.Dibujar();
+        }
+````
+El polimorfismo hace que se pueda hacer que por ejemplo la variable fig cumpla distintas funciones dependiendo de lo que se le pide o que haga lo que se necesite segun el objeto
+
+
 ## 2.  **La pregunta inicial**
 
 ¿ Que es el encapsulamiento ? de que maneras se puede utilizar y como puedo aplicarlo de manera util en mi programa
