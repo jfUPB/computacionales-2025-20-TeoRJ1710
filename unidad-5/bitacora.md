@@ -125,8 +125,24 @@ El polimorfismo hace que se pueda hacer que por ejemplo la variable fig cumpla d
 ¿ Que es el encapsulamiento ? de que maneras se puede utilizar y como puedo aplicarlo de manera util en mi programa
 
 ## 3.  **Registro de exploración:** 
-> Aquí documentas cada ciclo de pregunta -> hipótesis -> experimento -> hallazgo -> reflexión.
-> Debe ser rico en evidencia visual (código, capturas del depurador con anotaciones, diagramas).
+
+### Actividad 2
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/13da1781-f2f6-49cd-8c28-3a95101b6e07" />
+Aqui pude identificar en el momento en donde se crea una particular en si su posicion y color
+
+<img width="1920" height="1076" alt="image" src="https://github.com/user-attachments/assets/b2aa263f-c9a9-445a-bd26-4a5b2c95c8fe" />
+En la siguiente linea pude observar como  cambia la position y velocity
+
+<img width="1920" height="1012" alt="image" src="https://github.com/user-attachments/assets/ef2e11e0-7bb5-4424-8327-46a5835570c0" />
+Aqui se ve cuando ocurre la explosion exitosamente
+
+<img width="1917" height="1040" alt="image" src="https://github.com/user-attachments/assets/70cddb15-d679-47b7-bb3e-894cc63e22a2" />
+Aqui se ve como nuevas particulas se agregan al vector
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c26a049b-0d06-4154-9f95-468beacbb70a" />
+Aqui pude ver como diferentes clases se dibujan con diferentes formas
+
 
 ## 4.  **Consolidación, autoevaluación y cierre:**
 > [!CAUTION]
