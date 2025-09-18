@@ -119,10 +119,26 @@ POLIMORFISMO:
 ````
 El polimorfismo hace que se pueda hacer que por ejemplo la variable fig cumpla distintas funciones dependiendo de lo que se le pide o que haga lo que se necesite segun el objeto
 
+Parte 3: hipótesis sobre la implementación
+
+Esta es la parte más importante. Imagina que eres un diseñador de lenguajes de programación. Tienes que decidir cómo implementar estos conceptos en la memoria y en el procesador. No hay respuestas incorrectas, solo ideas. Dibuja si te ayuda.
+
+Memoria y herencia: cuando creas un objeto Rectangulo, este tiene Base, Altura y también Nombre. ¿Cómo te imaginas que se organizan esos tres datos en la memoria del computador para formar un solo objeto?
+
+R: yo me imagino que esos tres datos se agrupan como en un bloque y se ordenan por medio que cada atributo del obejto o pues del rectangulo que vamos a crear tenga su puesto ya puesto, y asi si fuera un cuadrado o demas objetos geometricos como por ejemplo {base / altura / nombre} o algo asi
+
+El mecanismo del polimorfismo: pensemos de nuevo en la llamada fig.Dibujar(). El compilador solo sabe que fig es una Figura. ¿Cómo decide el programa, mientras se está ejecutando, si debe llamar al Dibujar del Circulo o al del Rectangulo? Lanza algunas ideas o hipótesis.
+
+R: esto del polimorfismo si se me complica mucho, lo que mas o menos puedo entender es que es mediante una tabla de funciones o algo que organiza las funciones y segun lo que pida el programa lo llama y hace esa funcion en especifico, es una explicacion en muy pocas palabras pero por lo que entiendo de polimorfismo es eso basicamente que llama a la funcion segun lo que se pida, osea si me llaman para dibujar primero se busca en la tabla para ver por ejemplo que funcion uso si necesito dibujar un rectangulo.
+
+La barrera del encapsulamiento: ¿Cómo crees que el compilador logra que no puedas acceder a un miembro private desde fuera de la clase? ¿Es algo que se revisa cuando escribes el código, o es una protección que existe mientras el programa se ejecuta? ¿Por qué piensas eso?
+
+R: seria mientras el programa se ejecuta y no algo que se revise, Porque el encapsulamiento como se vio en la anterior actividad lo que hace es que pone como una barrera al momento de depurar, lo que hace es que si no se tiene acceso osea que esta protegida al momento de ejecutar dice error, lo cual se da en el momento de la ejecucion
+
 
 ## 2.  **La pregunta inicial**
 
-¿ Que es el encapsulamiento ? de que maneras se puede utilizar y como puedo aplicarlo de manera util en mi programa
+¿ Que es el encapsulamiento ? de que maneras se puede utilizar y como puedo aplicarlo de manera util en mi programa ( Esta fue la pregunta que se me ideo al principio y queria hacer el camino personalizado pero no tenia idea como de aqu actividades seguir o que hacer minimamente para que no pareciera incompleto, entonces decidi irme por la ruta guiada)
 
 ## 3.  **Registro de exploración:** 
 
@@ -145,11 +161,18 @@ Aqui pude ver como diferentes clases se dibujan con diferentes formas
 
 Reflexion actividad 2
 
-R: Identifique mas o menos eficientemente los puntos importantes del codigo, que hacian y como funcionaba el codigo, no puse las partes en donde se evidencia que cuando una particula es destruida vuelve a crear otra porque es mas o menos obvio, pero si pude identificar los puntos importantes, si con algo de ayuda pero si los pude identificar y pude entender su funcionamiento.>
+R: Identifique mas o menos eficientemente los puntos importantes del codigo, que hacian y como funcionaba el codigo, no puse las partes en donde se evidencia que cuando una particula es destruida vuelve a crear otra porque es mas o menos obvio, pero si pude identificar los puntos importantes, si con algo de ayuda pero si los pude identificar y pude entender su funcionamiento.
 
 
+### Actividad 3
+
+### Actividad 4
+
+### Actividad 5
+
+### Actividad 6
 
 
 ## 4.  **Consolidación, autoevaluación y cierre:**
-Autoevaluacion actividad 2
+### Autoevaluacion actividad 2
 R: Siento que mi nota para esta actividad seria en la fase de en desarrollo( 2.0 - 3.4 ) ya que es verdad que necesite ayuda de la ia generativa y me costo mucho porder enternderlo ademas que las respuestas son algo simples, pero me quedo con mi entendimiento y que comoprendi el funcionamiento base del codigo.
