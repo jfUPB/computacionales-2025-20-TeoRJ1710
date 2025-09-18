@@ -143,7 +143,13 @@ Aqui se ve como nuevas particulas se agregan al vector
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c26a049b-0d06-4154-9f95-468beacbb70a" />
 Aqui pude ver como diferentes clases se dibujan con diferentes formas
 
+Reflexion actividad 2
+
+R: Identifique mas o menos eficientemente los puntos importantes del codigo, que hacian y como funcionaba el codigo, no puse las partes en donde se evidencia que cuando una particula es destruida vuelve a crear otra porque es mas o menos obvio, pero si pude identificar los puntos importantes, si con algo de ayuda pero si los pude identificar y pude entender su funcionamiento.>
+
+
+
 
 ## 4.  **Consolidación, autoevaluación y cierre:**
-> [!CAUTION]
-> Esta sección es OBLIGATORIA y central para tu evaluación
+Autoevaluacion actividad 2
+R: Siento que mi nota para esta actividad seria en la fase de en desarrollo( 2.0 - 3.4 ) ya que es verdad que necesite ayuda de la ia generativa y me costo mucho porder enternderlo ademas que las respuestas son algo simples, pero me quedo con mi entendimiento y que comoprendi el funcionamiento base del codigo.
