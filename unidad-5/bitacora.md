@@ -2,12 +2,177 @@
 
 ## 1.  **Diagnóstico inicial**
 
+1: ¿Qué es el encapsulamiento para ti? Describe una situación en la que te haya sido útil o donde hayas visto su importancia.
+
+R:  es el principio de agrupar datos (atributos) y los métodos que operan sobre ellos dentro de una única unidad (una clase) y controlar el acceso a esos datos para proteger su integridad y seguridad.
+
+¿Qué es la herencia? ¿Por qué un programador decidiría usarla? Da un ejemplo simple.
+
+R: la herencia es el metodo mediante por ejemplo el hijo puede como dice su nombre heredar los atributos o metodos de su padre ya existente, esto se puede utilizar de varias maneras como para organizacion del codigo, como para extender y darle mas funciones al codigo, para que sea mas compacto, etc.
+
+¿Qué es el polimorfismo? Describe con tus palabras qué significa que un código sea “polimórfico”.
+
+R: es como la capacidad que tiene un codigo de tratar o ordenar ciertas funciones para utilizarlas todas en una interfaz comun, sirve mas que todo para ordenaqr y compactar y que no se tenga que recurrir a muchas interfaces.
+
+Parte 2: análisis de código (en C#)
+
+````
+using System;
+using System.Collections.Generic;
+
+public abstract class Figura
+{
+    private string nombre;
+
+    public string Nombre
+    {
+        get { return nombre; }
+        protected set { nombre = value; }
+    }
+
+    public Figura(string nombre)
+    {
+        this.Nombre = nombre;
+    }
+
+    public abstract void Dibujar();
+}
+
+public class Circulo : Figura
+{
+    public double Radio { get; private set; }
+
+    public Circulo(double radio) : base("Círculo")
+    {
+        this.Radio = radio;
+    }
+
+    public override void Dibujar()
+    {
+        Console.WriteLine($"Dibujando un {Nombre} de radio {Radio}.");
+    }
+}
+
+public class Rectangulo : Figura
+{
+    public double Base { get; private set; }
+    public double Altura { get; private set; }
+
+    public Rectangulo(double b, double h) : base("Rectángulo")
+    {
+        this.Base = b;
+        this.Altura = h;
+    }
+
+    public override void Dibujar()
+    {
+        Console.WriteLine($"Dibujando un {Nombre} de {Base}x{Altura}.");
+    }
+}
+
+public class Programa
+{
+    public static void Main()
+    {
+        List<Figura> misFiguras = new List<Figura>();
+
+        misFiguras.Add(new Circulo(5.0));
+        misFiguras.Add(new Rectangulo(4.0, 6.0));
+        misFiguras.Add(new Circulo(10.0));
+
+        foreach (Figura fig in misFiguras)
+        {
+            fig.Dibujar();
+        }
+    }
+}
+````
+
+ENCAPSULAMIENTO:
+
+````
+public string Nombre
+    {
+        get { return nombre; }
+        protected set { nombre = value; }
+    }
+````
+
+R:  es un claro ejemplo de encapsulamiento porque proteje el acceso a NOMBRE, tambien permite leer desde afuera con el get pero n modificarlo
+
+
+HERENCIA:
+
+````
+public class Circulo : Figura
+````
+Aqui se ve como la clse circulo hereda los atributos y las funciones de la clase figura
+
+
+POLIMORFISMO:
+
+````
+ foreach (Figura fig in misFiguras)
+        {
+            fig.Dibujar();
+        }
+````
+El polimorfismo hace que se pueda hacer que por ejemplo la variable fig cumpla distintas funciones dependiendo de lo que se le pide o que haga lo que se necesite segun el objeto
+
+Parte 3: hipótesis sobre la implementación
+
+Esta es la parte más importante. Imagina que eres un diseñador de lenguajes de programación. Tienes que decidir cómo implementar estos conceptos en la memoria y en el procesador. No hay respuestas incorrectas, solo ideas. Dibuja si te ayuda.
+
+Memoria y herencia: cuando creas un objeto Rectangulo, este tiene Base, Altura y también Nombre. ¿Cómo te imaginas que se organizan esos tres datos en la memoria del computador para formar un solo objeto?
+
+R: yo me imagino que esos tres datos se agrupan como en un bloque y se ordenan por medio que cada atributo del obejto o pues del rectangulo que vamos a crear tenga su puesto ya puesto, y asi si fuera un cuadrado o demas objetos geometricos como por ejemplo {base / altura / nombre} o algo asi
+
+El mecanismo del polimorfismo: pensemos de nuevo en la llamada fig.Dibujar(). El compilador solo sabe que fig es una Figura. ¿Cómo decide el programa, mientras se está ejecutando, si debe llamar al Dibujar del Circulo o al del Rectangulo? Lanza algunas ideas o hipótesis.
+
+R: esto del polimorfismo si se me complica mucho, lo que mas o menos puedo entender es que es mediante una tabla de funciones o algo que organiza las funciones y segun lo que pida el programa lo llama y hace esa funcion en especifico, es una explicacion en muy pocas palabras pero por lo que entiendo de polimorfismo es eso basicamente que llama a la funcion segun lo que se pida, osea si me llaman para dibujar primero se busca en la tabla para ver por ejemplo que funcion uso si necesito dibujar un rectangulo.
+
+La barrera del encapsulamiento: ¿Cómo crees que el compilador logra que no puedas acceder a un miembro private desde fuera de la clase? ¿Es algo que se revisa cuando escribes el código, o es una protección que existe mientras el programa se ejecuta? ¿Por qué piensas eso?
+
+R: seria mientras el programa se ejecuta y no algo que se revise, Porque el encapsulamiento como se vio en la anterior actividad lo que hace es que pone como una barrera al momento de depurar, lo que hace es que si no se tiene acceso osea que esta protegida al momento de ejecutar dice error, lo cual se da en el momento de la ejecucion
+
+
 ## 2.  **La pregunta inicial**
 
+¿ Que es el encapsulamiento ? de que maneras se puede utilizar y como puedo aplicarlo de manera util en mi programa ( Esta fue la pregunta que se me ideo al principio y queria hacer el camino personalizado pero no tenia idea como de aqu actividades seguir o que hacer minimamente para que no pareciera incompleto, entonces decidi irme por la ruta guiada)
+
 ## 3.  **Registro de exploración:** 
-> Aquí documentas cada ciclo de pregunta -> hipótesis -> experimento -> hallazgo -> reflexión.
-> Debe ser rico en evidencia visual (código, capturas del depurador con anotaciones, diagramas).
+
+### Actividad 2
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/13da1781-f2f6-49cd-8c28-3a95101b6e07" />
+Aqui pude identificar en el momento en donde se crea una particular en si su posicion y color
+
+<img width="1920" height="1076" alt="image" src="https://github.com/user-attachments/assets/b2aa263f-c9a9-445a-bd26-4a5b2c95c8fe" />
+En la siguiente linea pude observar como  cambia la position y velocity
+
+<img width="1920" height="1012" alt="image" src="https://github.com/user-attachments/assets/ef2e11e0-7bb5-4424-8327-46a5835570c0" />
+Aqui se ve cuando ocurre la explosion exitosamente
+
+<img width="1917" height="1040" alt="image" src="https://github.com/user-attachments/assets/70cddb15-d679-47b7-bb3e-894cc63e22a2" />
+Aqui se ve como nuevas particulas se agregan al vector
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c26a049b-0d06-4154-9f95-468beacbb70a" />
+Aqui pude ver como diferentes clases se dibujan con diferentes formas
+
+Reflexion actividad 2
+
+R: Identifique mas o menos eficientemente los puntos importantes del codigo, que hacian y como funcionaba el codigo, no puse las partes en donde se evidencia que cuando una particula es destruida vuelve a crear otra porque es mas o menos obvio, pero si pude identificar los puntos importantes, si con algo de ayuda pero si los pude identificar y pude entender su funcionamiento.
+
+
+### Actividad 3
+
+### Actividad 4
+
+### Actividad 5
+
+### Actividad 6
+
 
 ## 4.  **Consolidación, autoevaluación y cierre:**
-> [!CAUTION]
-> Esta sección es OBLIGATORIA y central para tu evaluación
+### Autoevaluacion actividad 2
+R: Siento que mi nota para esta actividad seria en la fase de en desarrollo( 2.0 - 3.4 ) ya que es verdad que necesite ayuda de la ia generativa y me costo mucho porder enternderlo ademas que las respuestas son algo simples, pero me quedo con mi entendimiento y que comoprendi el funcionamiento base del codigo.
