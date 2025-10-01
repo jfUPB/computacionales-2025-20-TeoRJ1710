@@ -62,3 +62,48 @@ R: primero seria que por ejemplo a comparacion de una variable local las particu
 ### Autoevaluacion de la actividad
 
 todas las actividades desarrolladas, considero que fue un buen desarrollo creo que los mapas estan correctos y el analisis de mis respuestas fue correcto, pero por la duda de los mapas yo considero que un 4 para esta podria estar bien
+
+## Actividad 03
+
+Explica con tus propias palabras el propósito del patrón Factory Method (o Simple Factory, en este caso). ¿Qué problema principal aborda en la creación de objetos?
+
+R: pues basandome en el enunciado de la actividad como lo hice en la actividad pasada puedo decir que basandome en el caso de estudio es lo que se utiliza para separar la creacion de todas las particulas aparte como una particlefactory en vez de tener un new particle.
+
+y pues por lo que entiendo soluciona principalmente que facilita añadir nuevos tipos de objetos sin tener que modificar en muchos sitios del código.
+
+
+¿Qué ventajas aporta el uso de ParticleFactory en ofApp::setup en comparación con instanciar y configurar las partículas directamente allí? Piensa en términos de organización del código (SRP - Single Responsibility Principle), legibilidad y facilidad para añadir nuevos tipos de partículas en el futuro.
+
+R: 
+
+organizacion: 
+
+ofapp lo unico que tiene que hacer es delegar responsabilidades como darle la responsabilidad de la creacion de particulas a factoryparticle
+
+
+simplicidad:
+
+En lugar de tener 20 líneas repitiendo configuraciones como de crearla de darle estos atributos y estos, ofApp solo llama a ParticleFactory
+
+
+Modificacion y manipulacion facil:
+
+Si en el futuro queremos agregar más tipos de partículas solo tenemos que modificas factory y miles de lineas de codigo de ofapp
+
+
+Imagina que quieres añadir un nuevo tipo de partícula llamada "black_hole" que tiene tamaño grande, color negro y velocidad muy lenta. Describe los pasos que necesitarías seguir para implementar esto utilizando la ParticleFactory existente. ¿Tendrías que modificar ofApp::setup? ¿Por qué sí o por qué no?
+
+R: respondiendo primero a la pregunta segun la logica de todo lo anterior visto NO porque como se explico la unico que necesita hace ofapp es delegar responsabilidades asi que todo el proceso de crear una partucla tiene que ser de particlefactory por lo cual yo considero que no se necesita modificar
+
+yo lo añadiria primero en particle factory añadir un nuevo else if y despues tipo black_hole y despues todos sus atributos, tamaño, color etc ( pues yo segui mas o menos la guia que ya estaba en el resto ya creadas en la factory
+podria quedar algo asi:
+<img width="620" height="396" alt="image" src="https://github.com/user-attachments/assets/044beb51-13f8-496b-9ac9-938f539cab98" />
+
+y me acabo de dar cuenta que lo unico que habria que cambiar seria la llamada a la particula en ofapp, pero de resto no veo nada mas que cambiar ahi.
+
+
+
+El método createParticle en el ejemplo es estático. ¿Qué implicaciones (ventajas/desventajas) tiene esto comparado con tener una instancia de ParticleFactory y un método de instancia createParticle()?.
+
+R:
+
