@@ -106,4 +106,47 @@ y me acabo de dar cuenta que lo unico que habria que cambiar seria la llamada a 
 El método createParticle en el ejemplo es estático. ¿Qué implicaciones (ventajas/desventajas) tiene esto comparado con tener una instancia de ParticleFactory y un método de instancia createParticle()?.
 
 R:
+por lo que puedo ver de ventajas es que este codigo tal cual como esta le combiene que se estatica porque no se requiere instnaciar la fabrcia por lo cual al repasar es menos memoria usada ( y pues tambien ya que es un proyecto simple pues le queda muy bien), pero pues en parte en desventajas por lo que comente si fuera un proyecto grande por ejemplo seria menos flexible, por ejemplo no se podria heredar para tener distintos tipos de fabricas de muchos distintos tipos de particulas.
 
+### Autoevaluacion actividad 03
+
+considero que las respuestas estuvieron bien completas y bien argumentados, fuera de algun fallo en alguna respuesta yo me pondria 5.
+
+
+## Actividad 04
+
+Explica con tus propias palabras el propósito del patrón State. ¿Cuándo es útil aplicarlo?
+
+R: Por lo que entendi tambnien como antes de los enunciados de las actividades el patrón State sirve para que un objeto cambie su comportamiento según el estado en el que esté, sin necesidad de usar if/else gigantes.
+por lo cual es util caundo se quiere que el codigo sea facil de mantener modificar y entender
+
+
+
+Dibuja un diagrama de estados simple para la clase Particle. Muestra los diferentes estados (Normal, Attract, Repel, Stop) como nodos y las transiciones entre ellos como flechas etiquetadas con el evento que las causa (p. ej., la tecla presionada: ‘n’, ‘a’, ‘r’, ‘s’).
+
+R: 
+<img width="722" height="452" alt="image" src="https://github.com/user-attachments/assets/75906d51-a969-4319-8998-74622a999ea4" />
+
+
+Describe las ventajas de usar el patrón State en Particle en lugar de tener un miembro std::string estadoActual y usar un gran if/else if/else o switch dentro de Particle::update() para cambiar el comportamiento. Piensa en cohesión, extensibilidad (añadir nuevos estados) y el Principio Abierto/Cerrado (Open/Closed Principle).
+
+R:
+
+Cohesión: Cada estado tiene su propia clase con su lógica. No se mezclan todos los comportamientos en Particle.
+
+Extensibilidad: Si quiero un nuevo estado (BounceState por ejemplo), solo creo una nueva clase, sin tocar el código viejo.
+
+Principio Abierto cerrado: El código de Particle está “cerrado” a modificaciones pero “abierto” a extensiones, porque delega todo en los estados.
+
+
+¿Qué responsabilidad tienen los métodos onEnter y onExit en el patrón State? Proporciona un ejemplo de por qué podrían ser útiles (incluso si no se usan mucho en todos los estados de este caso de estudio). Por ejemplo, ¿Qué podrías hacer en onEnter para AttractState o en onExit para StopState?>
+
+R: En si las responsabilidades son que onEnter se ejecuta cuando un objeto entra a un estado. Sirve para inicializar algo o lanzar una animación y onExit se ejecuta cuando sale del estado. Sirve para limpiar o restaurar cosas.
+y pues el ejemplo que puedo dar es que en AttractState::onEnter se podría hacer que la partícula cambie de color a azul para indicar que está siendo atraída y en StopState::onExit se podria resetear la velocidad de la partícula a 0 antes de moverse de nuevo.
+
+### Autoevaluacion de la act 04
+Todas las actividades completas, el diagrama considero que esta bien, yo considero qeu estuvo bien para un 5
+
+## Autoevaluacion de la unidad
+
+Me voy a colocar un 4 por la obvia razon que no pude hacer la act 5 a tiempo por temas de tiempo por otros compromisos, considero que puede ser un 4 a mi parecer, porque se que algunos de mis analisis y respuestas estan mal y probablemente este mal, y aunque en alguno lugares admito que si me toco repasar de antes y investigar me quedo con que hice el esfuerzo en la amyoria de la unidad de hacer todo por mi cuenta
