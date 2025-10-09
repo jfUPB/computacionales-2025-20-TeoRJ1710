@@ -104,3 +104,13 @@ Modifica el código del triángulo para que sea interactivo.
 Incluye una captura de pantalla del triángulo interactivo funcionando en tu máquina.
 Explica el proceso de normalización de las coordenadas del mouse y cómo se relaciona con el sistema de coordenadas de OpenGL.
 Explica el proceso de normalización a coordenadas de dispositivo (NDC) y cómo se relaciona con el sistema de coordenadas de OpenGL.
+
+
+## Actividad 05
+
+🧐🧪✍️ Reporta en tu bitácora
+
+Modifica el código del triángulo para que sea interactivo.
+Incluye una captura de pantalla del triángulo interactivo funcionando en tu máquina.
+Explica el proceso de normalización de las coordenadas del mouse y cómo se relaciona con el sistema de coordenadas de OpenGL.
+Explica el proceso de normalización a coordenadas de dispositivo (NDC) y cómo se relaciona con el sistema de coordenadas de OpenGL.
