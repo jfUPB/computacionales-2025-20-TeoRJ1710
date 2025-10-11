@@ -43,6 +43,25 @@ glViewport(0, bufferHeight/2, bufferWidth/2, bufferHeight/2);
 
 Cambia los valores de bufferWidth y bufferHeight: divide por 2, por 4, multiplica por 2, por 4, etc. ¿Qué pasa? ¿Qué observas? ¿Qué crees que está pasando?
 
+R:
+
+A simple vista puedo ver el triangulo en si como casi en la misma forma que el anterior peero un poco mas angosto
+
+<img width="1919" height="1070" alt="image" src="https://github.com/user-attachments/assets/33511cce-7d52-467f-99b3-270e8a83d1b3" />
+
+pero al principio vi que el triangulo aparecio en la esquina de la pantalla lo cual se me hizo bastante raro
+
+lo que creo que esta pasando es que al dividir sus medidas su forma cambia por eso veo que se ve mas angosto
+
+y si lo multiplico or regla de 3 deberia de verse mas ancho
+
+No pues no se puso mas ancho y lo intente hasta por 8
+
+entonces debe de ser al inicio de la aplicacion porque lo unico que observo por ejemplo cuando lo dividi por 8 me salio el triangulo pero chiquito en la esquina de la pantalla.
+
+entonces por lo del viewport no debe de estar bien ajustado y por eso aparece como en una esquina
+
+
 
 
 🧐🧪✍️ Reporta en tu bitácora
@@ -52,6 +71,12 @@ Ya llevas un rato leyendo y no has hecho digestión. Para favorecer tu aprendiza
 ¿Cómo lo haces? Realiza un resumen de lo que has aprendido hasta ahora, haciendo un diagrama conceptual o un mapa mental. Experimentando. ¿Cómo? Haciendo la pregunta mágica: ¿Qué pasaría si? ¿Qué pasaría si cambio el tamaño de la ventana? ¿Qué pasaría si cambio el tamaño del viewport?
 
 Entonces hagamos “digestión”: en tu bitácora, escribe un resumen de lo que has aprendido hasta ahora y piensa en un experimento del tipo ¿Qué pasaría si?
+
+R:
+
+Bueno la verdad hasta ahora he aprendido no mucho del funcionanmiento de como funciona en si el codigo pero si de los mas basico del opengl, de sus componentes y lo que lo hace funcionar como el glad o el glm, tambien he aprendido solamente visualmente como se comporta el triangulo y que hace si le cambiamos de tamaño la pantalla, tambien que es en si lo que dibuja lo que estamos viendo y como se da ese procedimiento como por ejemplo que no sabia que en realidad el opengl era el que ordenaba a la gpu que dibujar y como hacerlo y mas cosas
+
+y la verdad me gustaria saber que pasaria si presiono f11 mientras tengo la pantalla completa, cambiara de tamaño ? o se mantendra como se muestra cuando hacemos click en el icono para ponerlo de pantala completa
 
 
 🧐🧪✍️ Reporta en tu bitácora
