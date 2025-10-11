@@ -85,23 +85,91 @@ y la verdad me gustaria saber que pasaria si presiono f11 mientras tengo la pant
 
 En esta unidad no profundizaremos en los tipos de primitivas, pero es importante que entiendas que OpenGL puede dibujar diferentes tipos de primitivas (triángulos, líneas, puntos, etc.).
 
+R:
+
+Pas que al cambiarlo evidentemente se dicuja una linea
+
+<img width="396" height="440" alt="image" src="https://github.com/user-attachments/assets/d00bb0b6-b1da-4fbc-ac2a-4767d375712f" />
+
+y si lo cambio a gl points 
+
+<img width="390" height="428" alt="image" src="https://github.com/user-attachments/assets/1ee13252-7c85-4ec1-bedf-243d21d08a10" />
+
+se alcanza a ver un pequeño punto
+
+y si cambio los parametros pasa que
+
+que cuando lo cambie a 2 no aparecio nada y no se porque, y si lo pongo en 4 aaprece esto
+
+<img width="1918" height="1079" alt="image" src="https://github.com/user-attachments/assets/d0830fe0-c2aa-423a-b309-f1b19e5027b8" />
+
+osea que cuando le asignamos menos vertices de los que necestia la figura directamente no lo dibuja. 
 
 🧐🧪✍️ Reporta en tu bitácora
 
 Vamos a terminar esta actividad con un nuevo momento de consolidación parcial. Hay algunos conceptos relacionados con los shaders y el pipeline de OpenGL que no hemos visto en detalle, pero no te preocupes, los vamos a trabajar en la siguiente actividad. Por ahora, quiero que te concentres en lo que has aprendido hasta aquí. Explica con tus propias palabras los siguientes conceptos. Puedes usar ejemplos, analogías o diagramas para ilustrar tus respuestas. Es importante que intentes responder estos conceptos sin ver inicialmente tus notas. Trata de ejercitar tu memoria y tu comprensión. Luego, puedes revisar tus notas para completar o corregir lo que hayas escrito.
 
 ¿Qué es el contexto OpenGL?
+
+R:
+
+Un contexto OpenGL es una estructura de datos interna que contiene El estado de opengl como sahders buffers, la version de opengl, la concexion o el lienzo en donde se va a dibujar los graficos en la ventana, los recursos y lo que se vaya a usar
+
 ¿Cuál es el rol de la biblioteca GLFW y qué ventaja tiene usarla?
+
+R: tiene la ventaja que permite abrir ventanas y es la que nos permite manejar diferentes tipos de eventos como el reton o el teclado, etc
+
 ¿Por qué crees que OpenGL necesita un contexto (recuerda la analogía del taller de arte)?
+
+R: Pues digammos que opengl es un perfecto artista con todas las habilidades, pero si no se le da un contexto ni un lienso ni un pinsel ni una idea de que dibujar va ser inutil, es necesario brindar el contexto para que opengl sepa con que trabajar, que hacer y pues su version.
+
 ¿En últimas qué será el framebuffer y a qué te recuerda de las dos primeras unidades del curso?
+
+R:
+Me recuerda mucho si me baso en las primeras semanas del curso como la herramienta que utilizamos para aprender todo esto de la memoria y los datos que almacena, me recuerda mcucho al ejercicio que hicimos de dibujar una linea que se iba desplazando asi que me imagino que tiene similitud aunque ahora no me acuerdo muy bien
+
 ¿Qué relación entre en el viewport y el framebuffer?
+
+R: que el viewport indica al framebuffer en que parte dibujar como la resolucion de la ventana que tanto dibujar, etc.
+
 ¿En todo la analizado hasta ahora qué rol juega los drivers de la GPU y la GPU misma?
+
+R: 
+La GPU es en si el artista que dibuja y opengl es el que le indica que dibujar mediante la memoria de la gpu
+
+
 ¿Por qué crees que sea necesario activar el VSync? ¿Si no lo activas y la imagen es estática qué crees que pase, y si es dinámica?
+
+R:
+en si el vsync es para que la gpu se alinee con la frecuencia de dibujado del monitor o de la pantalla de la maquina
+
+y si no se activa pues me ha pasado en varios videojuegos que la imangen se puede ver muy rara como con errores en el dibujado
+eso ya lo busque y se llama tearing, y si esta estatica pues no se nota, pero ne movimiento se ven los mismos erores y se ve horrible, por eso es que se active para que se vea fluido
+
 En esta unidad estamos usando OpenGL moderno, pero ¿Qué es OpenGL Legacy? ¿Qué diferencias hay entre ambos?
+
+R: 
+Open legacy como dice su nombre es una version vieja y todo era muy directo y tosco, el programador no tenia taanto control sobre lo que queria dibujar, y en la actual se pueden usar vuffers y shaders y es mas controlable 
+
 ¿Qué es el shader program? ¿Por qué es importante en OpenGL moderno?
+
+R:
+Hacen parte de opengl y ayudan a darle ordenes a la gpu de como pintar ciertas cosas como pixeles o lineas, etc
+
 Trata de revisar el código setupTriangle(), intuitivamente ¿Qué crees que hace? ¿Qué crees que es el VAO y el VBO?
+R: pues lo que puedo decir es que VAO es como el orden en como opengl debe de leer los datos y VBO es como en donde esta el triangulo o como debe dibujarlo
+osea es como que una son las indicaciones y otro es como usarlo
+
 En el ciclo principal (game loop) de OpenGL, notaste que en cada frame (cuadro) le decimos a openGL que use el shader program y el VAO. Si le indicas esto antes del game loop ¿Será necesario seguirlo haciendo en cada loop? Si no es necesario ¿En qué casos crees que esto puede ser útil?
+
+R:
+No, porque ya le estas indicando esa informacion antes del loop osea que en cada loop la debe der estar usando, aunque si necesitamos usar varias figuras ahi si es necesario indicarlo en cada loop, y puede ser util cuando solo se tiene una figura
+
 Finalmente, recuerda lo que hace glfwSwapBuffers(mainWindow); ¿Por qué crees que es importante? ¿Qué pasaría si no lo llamas? ¿Cómo explicas lo que pasa si no lo llamas? (experimenta)
+
+Pues por lo que pude ver a pesar que la imagen es estatica despues de indagar un poco pues en si en pocas paabras es lo que actualiza la pantalla, osea que si no lo llamamos pintamos el lienso una vez y ya, no hya mas y no hay actualizaciones oseas que la imagen se queda estatica.
+
+R:
 
 ## Actividad 04
 
