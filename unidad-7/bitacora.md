@@ -177,26 +177,64 @@ R:
 
 Luego de estudiar las unidades 1 y 2 de este curso y ver el video, escribe con tus propias palabras ¿Cuál es la diferencia entre una CPU y una GPU?
 
+R: El video la verdad ya lo habia visto muchas veces y en temas de la gpu y cpu estoy muy metido porque me encata temas de procesadores y gpu y eso, en si por lo que puedo decir por lo que ya se y por lo que se puede retratar en el video es que se pone a prueba la cpu contra la gpu en temas de imagen en si, vemos que la cpu por asi decirlo en temas de imagen no es algo tan eficiente, aunque en tmas generales de un computador es el cerebro del pc y no hay mas pieza mas importante que el, eso si dejando de lado los procesadores que vienen con graficos integrados, pero que igualmente a comparacion de una gpu la diferencia es enorme, las tarjetas gaficas o gpu son maquinas diseñadas para la imagen el video y la experiencia visual, entonces en terminos generales es eso, no quiere decir que un cpu no se pueda encargar de la imagen, pero la gpu esta diseñada y creada para eso especificamente
+
+
 🧐✍️ Reporta en tu bitácora
 
 Es momento de practicar la técnica de aprender a aprender que te he venido mostrando de manera insistente a lo largo del curso. Te voy a proponer una serie de preguntas para que reflexiones y escribas en tu bitácora. Trata de responder de memoria a cada pregunta. No busques la respuesta en el video. Trata de recordar lo que viste. De todas maneras si no lo logras hacer, regresa al video y busca la respuesta.
 
 ¿Cuáles son los tres pasos claves del pipeline de OpenGL? Explica en tus propias palabras cuál es el objetivo de cada paso.
+
+R: Vertex shaping se encarga en si de la imagen o pues de lo que se va mostrar, osea se encarga de los vertices de los triangulos y como se va mostrar cada cosa, mediante sus cordenadas su posicion o su colocacion, se encarga de mover millones de triangulos y millones de vertcies para poder crear la imagen en si, y porque no digo mostrar, pues porque el mostrar la imagen se encarga el Rasterization que se encarga de mediante los triangulos y lo que se tiene que mostrar con que pixeles de la pantalla mostrarlo, se adapta a la resolucion de pantalla y mediante mas resolucion el proceso se vuleve mucho mas bello porque se puede utilizar mas pixeles para ciertos trianculo y mostrar una imagen mas detallada y definida, la gpu calcula las cordenanadas de cada tringulo y asifna cierta cantidad de ixeles para rellenar ese trianculo seleccionado, y el fragmant shading que ya que la imagen esta ya diseñada y mostrada este se encarga de algo muy importante que es la apariencia de la imagen o mas bien el color, toma en cuenta shaders o cualquier tiempo de iluminacion, textura, color, ect que se haya diseñado y este le da ese tipo de color al pixel para que sea pintado segun lo que se requiera y lo que se diga segun todos los factores ya dichos.
+
+
 La gran novedad que introduce OpenGL moderno es el pipeline programable. ¿Qué significa esto? ¿Qué diferencia hay entre el pipeline fijo y el programable? ¿Qué ventajas le ves a esto? y si el pipeline es programable, ¿Qué tengo que programar?
+
+R: me imagino que es lo mismo que la actividad anterior sobre la pregunta del opengl nuevo  el antiguo y es en si que es mas moldeable para el programdador de que se muestra en la imagen, no e tan fijo ni tan lineal el programdor puede darle forma a lo que quiera mostrar segun lo que se necesite sin seguir ciertas cosas ya establecidas
+
 Si fueras a describir el proceso de rasterización ¿Qué dirías?
+
+R: Diria que es un proceso fundamental en la imagen y que tiene mucho que ver con el frame buffer y con el viewport, ya que en si es el que maneja el tema de como se muestra cada cosa en la pantalla, osea primero se diseña que se va ver y despues viene el rasterization para segun lo que se pida darle vida a eso y con los pixeles de la pantalla segun su resolucion darle la forma, ojo no el color eso ya es trabajo del siguiente
+
 ¿Qué son los fragmentos? ¿Es lo mismo un fragmento que un pixel? ¿Por qué?
+
+R: los fragmentos y los pixeles no son lo mismo pero uno contiene al otro, los fragments son grupos de pixeles de un triangulo que lo forman
+
 Explica qué problema resuelve el Z-buffer y ¿Qué es el depth test?
+
+R: El z buffer o el deph buffer resuleve el problema principal de que pues que por ejemplo, el vertex shaping ya tiene lo que hay que mostra listo con vetcies triangulos y todo, pero como todo videojuego 3d hay ciertos angulos en donde hay partes que pues se tapan entre si entonces no se van a ver y estra renderizando todo eso a la vez pues es imposible y si se pudiera no seria muy bueno para la memoria, eso o resuleve el z buffer que mediante el sistemas de cordenandas que se explica que utiliza el resterization que acomoda os pixeles en ciertos lugar, saca ademas de los valores X y Y un valor Z, que no es en si porque sea un ambiente  un juego 3D, o pues si porque es para resolver un problema en un juego 3d, pero no es en si enfocado en eso, si no que saca el valor en z de los veertices y de los pixeles lo cual cada pixel se le da un valor de z diferente si esta mas cerca o mas lejos, si esta mas cerca eso indica desde la vista de la camra al rasterization que pixel mostrar y cual no dependiendo la perpectiva de ese frame en especifico y esto para resolver ese problema.
+
 ¿Por qué se presenta el problema de la aliasing? ¿Qué es el anti-aliasing?
+
+R: el aliasing se da que en si auqnue al principio se definan las escenas de los video juegos en triangulos y vertices y todo muy lindo la realidad de lo que se le va mostrar al usuario es otra, y es que por el momento tdoas las antallas funcionan de acuerdo a pixeles osea cuadrados y esto mas que todo se ve en pantallas con poca resolcion o colocandole una baja resolucion , lo que es es que se notan los famosos dientes de cierra que hace ver la imagen fuera de como una simulacion de la vida real, algo que se ve feo, entonces el anti aliasing o el SSAA lo soluciona, consumiendo mas memoria y mas recursos de la gpu pero haciendo que la imagen se vea mas pulcra.
+
 ¿Qué relación hay entre la iluminación y el fragment shader? Siempre es necesario tener en cuenta la iluminación en un fragment shader? o puedo hacer un fragment shader sin iluminación? Explica que implicaciones tiene esto.
+
+R: la relacion entre iluminacion y el fragment shading que es el ultimo paso en el proceso de mostrar una imagen es basicamente que el fragment shading calcula los distintos tipos de iluminacion que hay en una escena de un videojuego por ejemplo para mostrarlo por asi decirlo mucho mas realista, y siempre es primordial porque si no se tuviera en cuenta el fragment cololearia los pixeles pero tdoo se veria como una escena mal hecha como para nios sin un realimso notorio, por eso es que se toma en cuenta la iluminacion, y si se podria hacer pero pues en resumen se veria horrible y con muy poco detalle la escena.
+
 ¿Qué implica para la GPU que una aplicación tenga múltiples fuentes de iluminación?
 
+R: mucho mas consumo en memoria y recursos lo cual se veria en mucha mejor calidad pero mas sacrificio de recursos, pero ues para eso es que estan diseñadas y en especia las tarjatas graficas dedicadas para que ellas solas se encargen de eso y no tener que sacrificar otros aspectos importantes del pc como la ram o la misma cpu, esto por ejemplo es un problema muy frecuente en las graficas integradas en la cpu que si que se encargan de las tareas graficas pero le roban una gran parte de la memria a la cpu lo cual se traduce en mas demanda de recuross para la gpu y menos rendimiento para porcesos simples del computador.
 
-🧐🧪✍️ Reporta en tu bitácora
 
-Modifica el código del triángulo para que sea interactivo.
-Incluye una captura de pantalla del triángulo interactivo funcionando en tu máquina.
-Explica el proceso de normalización de las coordenadas del mouse y cómo se relaciona con el sistema de coordenadas de OpenGL.
-Explica el proceso de normalización a coordenadas de dispositivo (NDC) y cómo se relaciona con el sistema de coordenadas de OpenGL.
+🧐✍️ Reporta en tu bitácora
+
+Es momento de hacer digestión cognitiva. Debemos parar de nuevo en este punto y consolidar. Para ello te pediré que hagas lo siguiente:
+
+Escribe un resumen en tus propias palabras de lo que se necesita para dibujar un triángulo en OpenGL.
+
+R: Siguiendo lo aprendido y deciendolo en mis propias palabras mas o menos resumida mente voy a seguir un poquito la logica del video y aplicarla aen esto, y pues por lo que entiendo es que primero lo primero definimos los vertices en donde se va esamblar el triangulo que queremos dibujar, despues mediante el rasterization utilizando los pixeles y los sahders y toda la informacion que e damos paa que se dibuje correctamente lo que queremos y la resolucion de la pantalla llenamos ese triangulo con los pixeles necesarios, despues con el fragment shading lo coloreamos de lo que necesitemos y ya. 
+
+y pues los vertices y el tamaño del trianuglo se encarga el rasterization segun la resolucon que pongamos en la ventana, ya sea en pantalla completa o en una pequeña ventanita o como sea pero a ciencia cierta si nos fijamos entre la distancia de los vertices del triangulo a los bordes de la ventana es exactamente la misma si no que a medida que la "resolucion" de la ventana aumenta, el triangulo tambien lo hace.
+
+
+Escribe un resumen en tus propias palabras de lo que necesitas para poder usar un shader en OpenGL.
+
+R: 
+pues con lo explicado me queda claro que es si o si obligatorio usar shaders en el opengl actual, y aqui se utlizan para lo vertices y para colorear y darle forma al triangulo que queremos
+
+y lo que se necesita primero es crear un obejto que tendra nuestros shaders y que se hace en una funcion paa este y se le da un id unico para cada llamada de opengl
 
 
 ## Actividad 05
