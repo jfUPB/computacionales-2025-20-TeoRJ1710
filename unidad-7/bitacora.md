@@ -245,3 +245,41 @@ Modifica el código del triángulo para que sea interactivo.
 Incluye una captura de pantalla del triángulo interactivo funcionando en tu máquina.
 Explica el proceso de normalización de las coordenadas del mouse y cómo se relaciona con el sistema de coordenadas de OpenGL.
 Explica el proceso de normalización a coordenadas de dispositivo (NDC) y cómo se relaciona con el sistema de coordenadas de OpenGL.
+
+## Actividad 06
+🧐🧪✍️ Reporta en tu bitácora
+
+Describe brevemente los cambios que realizaste en el código C++ (dónde obtienes el tiempo, cómo y dónde actualizas el uniform).
+
+R: describiendo brevemente lo que hice fue que parti en si del codigo normal del  inicio para poder hcaerlo ya que en este computador no tenia lo de la actividad 5, primero como no parti de la actividad 5 tuve que modificar el codigo primero corrigiendo unas errores de las ctiviades pasadas y despues poniendo entre el paso 14 en el while entre el paso 14 y el 15 esta parte de codigo que es el bucle que hace que se pueda obtener el tiempo para despues pasarlo al shader
+
+<img width="707" height="326" alt="image" src="https://github.com/user-attachments/assets/988f7b88-9a47-44dc-9cd0-5f35367d5511" />
+
+y por ultimo hice uns pequeños cambios utilizando la funcion sen y sumandole 1 y diviendola en 2 para poder que tueviera un rango de 0 a 1 y que oscilara en ese rango que despues se declara como una variable para utlizarla en nuestro rgb para remplzarla por el valor del rojo y asi hacer que sea como un pulso, que el trigangulo cambie de colores constanetmente
+
+<img width="640" height="413" alt="image" src="https://github.com/user-attachments/assets/66237596-7489-4124-bb59-03e6affbff2e" />
+
+
+Pega el código modificado de tu fragment shader.
+
+```
+
+const char* fragmentShaderSrc = R"glsl(
+    #version 460 core
+    uniform float u_tiempo;
+    out vec4 FragColor;
+    void main() {
+        float mi_valor = (sin(u_tiempo) + 1.0) / 2.0;
+        FragColor = vec4(mi_valor, 0.5, 0.2, 1.0);
+    }
+)glsl";
+```
+
+Explica cómo usaste la función de tiempo (sin, cos, u otra) para lograr el efecto de cambio de color cíclico. ¿Qué rango de valores produce tu cálculo y cómo afecta eso al color final?
+
+R: ya lo explique en el primer punto pero igualmente vuelvo a explicarlo que en si lo que se hace con el sen es que su rango osea e la funcion sen se sabe que es de 1 a -1 entonces aqui lo que hacemos es sumar 1 a la funcion lo cual hace que su rango pase a ser de 2 a 0 y ahi dividimos entre 2 para que quede un rango de 1 a 0, esto sirve para como representar el valor de rojo que es lo que queremos en esta actividad que es hacer un palpito del rojo que se vea fuerte y luego baje su intensidad como titilando, entonces al estar en ese rango hacemos que oscile entre 0 y 1 asi bajando y subiendo su intensidad asi haciendo el efecto visual que eueremos conseguir
+
+Incluye una captura de pantalla o UN ENLACE a un video mostrando el resultado del triángulo con color cambiante.
+
+
+Reflexión: ¿Qué otros efectos visuales simples podrías lograr usando el tiempo como uniform? Piensa en la posición, el tamaño o la rotación (aunque no hemos visto rotaciones formalmente, ¡intuitivamente podrías intentarlo!). Anota al menos una idea.
