@@ -281,5 +281,17 @@ R: ya lo explique en el primer punto pero igualmente vuelvo a explicarlo que en 
 
 Incluye una captura de pantalla o UN ENLACE a un video mostrando el resultado del triángulo con color cambiante.
 
+<img width="1919" height="1068" alt="image" src="https://github.com/user-attachments/assets/67f40c71-c3c3-4ecf-8a4f-5177273f1375" />
+
+Asi esta primero cuando esta opaco
+
+<img width="1916" height="1077" alt="image" src="https://github.com/user-attachments/assets/12dba2ff-f7d3-47ec-a27a-583d83f0f93b" />
+
+y asi esta despues y ya asi se repite
+
 
 Reflexión: ¿Qué otros efectos visuales simples podrías lograr usando el tiempo como uniform? Piensa en la posición, el tamaño o la rotación (aunque no hemos visto rotaciones formalmente, ¡intuitivamente podrías intentarlo!). Anota al menos una idea.
+
+R: primero pues que los vertices se puedan mover y asi hacer un efecto que sea como que el triangulo se hace mas grande y mas chicos y asi repetidamente y asi haciendo como un efecto de palpito
+
+y pues pienso que se podria hacer rotando el triangulo sobre su mismo eje
