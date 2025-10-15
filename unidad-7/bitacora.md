@@ -295,3 +295,7 @@ Reflexión: ¿Qué otros efectos visuales simples podrías lograr usando el tiem
 R: primero pues que los vertices se puedan mover y asi hacer un efecto que sea como que el triangulo se hace mas grande y mas chicos y asi repetidamente y asi haciendo como un efecto de palpito
 
 y pues pienso que se podria hacer rotando el triangulo sobre su mismo eje
+
+## AUTO EVALUACION UNIDAD
+
+considero que mi nota puede ser de 5 y que todas las actividades fueron resueltas correctamente y sin ningun problema
