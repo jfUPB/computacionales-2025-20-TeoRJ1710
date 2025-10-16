@@ -243,8 +243,37 @@ y lo que se necesita primero es crear un obejto que tendra nuestros shaders y qu
 
 Modifica el código del triángulo para que sea interactivo.
 Incluye una captura de pantalla del triángulo interactivo funcionando en tu máquina.
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4500d1ab-f074-434d-a705-599c77f08665" />
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/dbb43e03-0cca-4981-b31c-0011b7963a7c" />
+
+
 Explica el proceso de normalización de las coordenadas del mouse y cómo se relaciona con el sistema de coordenadas de OpenGL.
+
+R:
+
+Estos valores en píxeles no son muy útiles para OpenGL directamente, ya que dependen del tamaño de la ventana. Si usáramos los píxeles directamente, nuestro código se rompería al cambiar el tamaño de la ventana. Al normalizar, creamos un sistema de coordenadas relativo e independiente de la resolución. Un valor de x = 0.5 siempre representará el centro horizontal de la ventana, sin importar si esta mide 400 o 1920 píxeles de ancho.
+
+¿Cómo se hace? La fórmula es muy simple:
+coordenada_normalizada_x = posicion_x_en_pixeles / ancho_total_de_la_ventana
+
+coordenada_normalizada_y = posicion_y_en_pixeles / alto_total_de_la_ventana
+
 Explica el proceso de normalización a coordenadas de dispositivo (NDC) y cómo se relaciona con el sistema de coordenadas de OpenGL.
+
+R:
+
+Las Coordenadas de Dispositivo Normalizadas (NDC) son el sistema de coordenadas fundamental en el que OpenGL opera después de que tu Vertex Shader ha hecho su trabajo. Es la "meta" para todas las posiciones de los vértices.
+
+¿Qué es el sistema NDC? Es un pequeño cubo donde los ejes X, Y y Z van todos desde -1.0 hasta 1.0. El punto (0, 0) es el centro exacto de la pantalla.
+
+(-1, 0) es el centro del borde izquierdo.
+(1, 0) es el centro del borde derecho.
+(0, -1) es el centro del borde inferior.
+(0, 1) es el centro del borde superior.
+
+¿Cómo se relaciona con OpenGL? Cualquier vértice que el Vertex Shader envíe a la variable gl_Position debe estar en este espacio de coordenadas NDC. Si un vértice cae fuera del rango [-1, 1] en cualquier eje, será recortado y no se dibujará en la pantalla.
 
 ## Actividad 06
 🧐🧪✍️ Reporta en tu bitácora
