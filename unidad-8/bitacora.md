@@ -201,3 +201,8 @@ Ambos son igualmente eficientes en el cálculo puro del flocking (ambos lo hacen
 ¿Qué ocurre si mientras el hilo trabajador está calculando el movimiento de los boids, el hilo principal intenta añadir un nuevo boid? ¿Se congelará la aplicación? ¿Por qué?
 
 R: no no se congelaria, y por lo que entiendo es porque el hilo principal que llama a addboid y addboid intenta conseguir el lock y como el hilo trabajdor tiene el loc el hilo principal se bloqueara hasta que el lock no lo libere el trabajador, y mas o menos entiendo que se intenta comparar con la actividad 1 porque vemos que la imagen se congela por un momento hasta que vuelve y inicia, esto aqui no pasa, si se veria una micropausa pero no mas de un segundo si es mucho, por lo cual no se deberia de congelar
+
+
+## AUTOEVALUACION
+
+R: 4 ya que no hice la actividad 5 por temas de tiempo y ocupaciones de otras materias
