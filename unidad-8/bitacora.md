@@ -153,3 +153,51 @@ Aunque los locks aseguran la correctitud, ¿Puedes intuir por qué tener muchos 
 
 R: se limita el rendimeinto porque una cosa y otra no van de la mano en sentido practico y eficaz, la alta cohesion limita el paralelismo porque como se dice son muchos hilos esperando el mismo lock
 y mi justificacion es que el tiempo que pasan bloqueados por lo ya antes dicho esperando un solo lock reduce o anula el beneficio de haber lanzado multiles hilos por eso digo que no van de la mano en forma practica y eficaz
+
+
+
+🧐✍️ Reporta en tu bitácora
+
+Este es un ejercicio mental y de reflexión, no tienes que implementar nada, solo pensar:
+
+Piensa en la pregunta que te acabo de hacer. ¿Qué pasaría si tuviéramos varios hilos que calculan el movimiento de los boids? ¿Cómo podrías implementar esto? ¿Qué problemas crees que podrían surgir? ¿Cómo podrías solucionarlos?
+
+R. yo lo que implementaria seria similar al Mandelbrot: Dividir el vector boids en subconjuntos de boids. Cada hilo ejecuta el bucle de simulación (b.run()) solo para su subconjunto asignado.
+Ahora el problema y un gran problema que podria suceder es que los boids aqui necesitan saber como estan los otros boids osea pues sus vecinos, pero podria pasar que otro hilo este modificacndo los datos de ese boid a la vez que el otro hilo trata de leer la posicion por asi decirlo del vecino lo cual podria dar errores o ver quien primero lee o modifica
+y para solucionarlo se podria poner un lock en cada boid pero no lo veo tan viable entonces propongo que antes de inicair el hilo principál cree una copia de una sola lectura para todos los boid, los trabajadores trabajn sobre esa copia y ya los nuevos resultados son usados por el hilo principal para aplicar todos los resultados a los boid reales.
+
+🧐🧪✍️ Reporta en tu bitácora
+
+Analiza el código del Flocking sin hilos y el Flocking con hilos.
+¿Qué diferencias encuentras? ¿Por qué crees que es importante la sincronización en el segundo caso?
+
+R: 
+
+Diferencias: En la versión con hilos, el cálculo del movimiento (Flock::threadedFunction()) se ejecuta en un hilo separado del dibujo (ofApp::draw()). Importancia de la Sincronización: Es crucial porque el vector boids es compartido. Tanto el hilo trabajador (modifica) como el hilo principal (lee para dibujar y modifica al añadir) acceden a él. La sincronización (lock/unlock) evita que un hilo intente, por ejemplo, dibujar el vector (leyendo) justo cuando otro hilo intenta añadirle un elemento (modificando y posiblemente redimensionando), lo que causaría un error o crash.
+
+¿Por qué al añadir un nuevo boid la simulación se ralentiza? ¿Qué ocurre si añades muchos boids?
+
+R:
+
+La simulación se ralentiza porque el cálculo del flocking es $O(n^2)$ (cada boid interactúa con casi todos los demás). Al añadir un boid (incrementar $n$), el tiempo de cálculo por frame aumenta cuadráticamente. Si añades muchos boids, el tiempo de cálculo se vuelve tan largo que el FPS baja drásticamente o la aplicación se congela (en la versión sin hilos).
+
+
+Notaste que la versión con hilos tiene un sleep(5) en el hilo trabajador. ¿Por qué crees que se ha añadido? ¿Qué pasaría si lo eliminamos?
+
+R:
+
+El sleep(5) (milisegundos) se añade para limitar la velocidad de actualización del flocking (ej. a 200 veces por segundo, $1000/5=200$). Si lo eliminamos, el hilo trabajador intentaría recalcular el flocking tan rápido como el CPU lo permita (posiblemente miles de veces por segundo). Esto consumiría el 100% de un núcleo del CPU innecesariamente, calentando el procesador y potencialmente robando tiempo de CPU al hilo principal de dibujo, lo que podría hacer que el framerate de la UI bajara (peor eficiencia energética y peor responsividad en algunos casos).
+
+
+Compara el rendimiento de ambos enfoques. ¿Cuál crees que es más eficiente? ¿Por qué?
+
+R:
+
+Ambos son igualmente eficientes en el cálculo puro del flocking (ambos lo hacen de forma secuencial). Sin embargo, el enfoque con hilos es percibido como más eficiente y responsivo porque: 1. Mantiene el FPS del dibujo alto (UI fluida). 2. Permite la interacción (añadir boids) incluso durante el cálculo pesado. El hilo trabajador puede calcular más lento si es necesario (gracias al sleep), lo que puede hacer que la eficiencia energética sea mejor, pues no intenta calcular el flocking más rápido de lo necesario para que el ojo lo perciba.
+
+
+🧐✍️ Reporta en tu bitácora
+
+¿Qué ocurre si mientras el hilo trabajador está calculando el movimiento de los boids, el hilo principal intenta añadir un nuevo boid? ¿Se congelará la aplicación? ¿Por qué?
+
+R: no no se congelaria, y por lo que entiendo es porque el hilo principal que llama a addboid y addboid intenta conseguir el lock y como el hilo trabajdor tiene el loc el hilo principal se bloqueara hasta que el lock no lo libere el trabajador, y mas o menos entiendo que se intenta comparar con la actividad 1 porque vemos que la imagen se congela por un momento hasta que vuelve y inicia, esto aqui no pasa, si se veria una micropausa pero no mas de un segundo si es mucho, por lo cual no se deberia de congelar
