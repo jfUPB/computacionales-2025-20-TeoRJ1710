@@ -104,3 +104,52 @@ y pues evidentemente el tiempo de calculo como se espera en la paralela es mucho
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/99e36aef-38ca-4a01-a5ef-f27e33098185" />
 
 con solo mirar el numero de fps se da cuenta de la sobre carga que se le da en el proceso.
+
+## Actividad 04
+🧐🧪✍️ Reporta en tu bitácora
+
+Observa ambos códigos y responde a las siguientes preguntas:
+
+¿Cuál es la estructura de datos principal que contiene la información de todos los boids y que es accedida por múltiples hilos (el hilo principal para dibujar, el hilo trabajador para actualizar)?
+
+R: El vector std::vector<Boid> boids dentro de la clase Flock.
+
+Observa la función Flock::threadedFunction() donde el hilo trabajador calcula el movimiento. ¿Qué operaciones realizan sobre el vector de boids compartido?
+
+R: Lectura y Escritura o Modificación.
+
+Observa la función ofApp::draw(). ¿Qué operación realiza sobre el vector compartido?
+
+R:  Lectura ya que recorre contsnatementye el vector para llamar a draw
+
+Observa Flock::addBoid() y ofApp::mouseDragged(). ¿Qué operación realizan?
+
+R: Escribir o modificar si ese es su caso, añadiendo un elemento nuevo al vector
+
+Describe un escenario específico y concreto donde la falta de sincronización podría causar un problema. Por ejemplo:
+
+R: un planteo posible podria ser redimensionamiento de vector durante Recorrido. El hilo trabajador comienza un bucle para actualizar los boids, justo despues el hilo prncipal añade un nuveo void y el vector se redmiemnsiona y manda los boids a otra parte, pero el principal sigue creando en un punto donde ya no estan ya no existen osea es invalido, y pues lo mas probable es que ocurra un crash.
+
+Localiza todas las llamadas a lock() y unlock() dentro de la clase Flock (o donde se acceda al vector compartido).
+
+R:
+
+Hilo trabajador
+<img width="258" height="160" alt="image" src="https://github.com/user-attachments/assets/2c474e9b-3909-42b2-825b-d46813a1e3c8" />
+
+Hilo principal modifica
+<img width="271" height="92" alt="image" src="https://github.com/user-attachments/assets/960169b2-a8b3-4458-aaaf-fea5404aea2c" />
+
+Hilo principal lee
+<img width="293" height="139" alt="image" src="https://github.com/user-attachments/assets/07019921-234c-4b2f-8955-de10281fd5d3" />
+
+
+Justificación: para uno de los escenarios problemáticos que describiste arriba, explica cómo las llamadas a lock()/unlock() en las secciones de código relevantes evitan que ocurra ese problema específico.
+
+R:
+La sincronizacion ayuda o evita mas que todo el problema de redimensionamiento de forma que si el hilo trabajdor ya adquirio a Flock::threadedFunction() el hilo principal que llama a flock addboid  no podra obtener el lock y quedara bloqueado hatsa que el hilo trabajdor termine su bucle y llame a unlock
+
+Aunque los locks aseguran la correctitud, ¿Puedes intuir por qué tener muchos hilos esperando para adquirir un lock sobre el mismo vector (alta contención) podría limitar el beneficio de rendimiento del paralelismo en este caso? Justifica tu respuesta.
+
+R: se limita el rendimeinto porque una cosa y otra no van de la mano en sentido practico y eficaz, la alta cohesion limita el paralelismo porque como se dice son muchos hilos esperando el mismo lock
+y mi justificacion es que el tiempo que pasan bloqueados por lo ya antes dicho esperando un solo lock reduce o anula el beneficio de haber lanzado multiles hilos por eso digo que no van de la mano en forma practica y eficaz
